@@ -1,6 +1,6 @@
-import Coin from '../icons/Coin.jsx'
-import Truck from '../icons/Truck.jsx'
-import Warranty from '../icons/Warranty.jsx'
+import Coin from '../../icons/Coin.jsx'
+import Truck from '../../icons/Truck.jsx'
+import Warranty from '../../icons/Warranty.jsx'
 
 const Topbar = () => {
   return (
