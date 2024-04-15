@@ -2,10 +2,12 @@ import Bag from "../../icons/Bag"
 import ChevronDown from "../../icons/ChevronDown"
 import User from "../../icons/User"
 
+import Navbar_meta from '../../../public/navbar_meta.svg'
+
 const NavbarLeft = () => {
   return (
     <div className="flex items-center gap-6">
-      <img src="https://static.xx.fbcdn.net/rsrc.php/y9/r/tL_v571NdZ0.svg" alt="navbar_meta" 
+      <img src={Navbar_meta} alt="navbar_meta" 
         className="w-16"
       />
 
