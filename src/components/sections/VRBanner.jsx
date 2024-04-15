@@ -2,7 +2,8 @@ const VRBanner = () => {
   return (
     <section className="bg-gray-100">
       <div className="max-w-[1380px] mx-auto w-full px-8 grid grid-cols-2 gap-6 py-8 mb-20">
-        <div className="col-span-1 bg-[url(https://scontent.flim25-1.fna.fbcdn.net/v/t39.8562-6/409969140_949616809866658_2000750513508446204_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f537c7&_nc_ohc=3E5_DKLfkKsAb5bJCH1&_nc_ht=scontent.flim25-1.fna&oh=00_AfDNid75jGprXgyCi2AddJSVjg_A_IXeTkhQOg0hKJDLnQ&oe=661F9A33)] w-full bg-cover bg-right rounded-2xl overflow-hidden pb-10">
+        <div className="col-span-1 w-full bg-[url(/public/vrbanner_1_sm.webp)] md:bg-[url(/public/vrbanner_1_md.webp)] lg:bg-[url(/public/vrbanner_1_lg.webp)] bg-cover bg-right rounded-2xl overflow-hidden pb-10">
+          {/* style={{ backgroundImage: 'url(/public/vrbanner_1_lg.webp)' }} */}
           <div className="w-1/2 p-8">
 
             <p className="text-xs rounded-md px-2 py-0.5 bg-white inline-block mb-2">
@@ -35,7 +36,7 @@ const VRBanner = () => {
           </div>
         </div>
 
-        <div className="col-span-1 bg-[url(https://scontent.flim15-1.fna.fbcdn.net/v/t39.8562-6/409928241_859710259179463_2105968938206980908_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f537c7&_nc_ohc=O_fvkiY8jz4Ab7DZpHG&_nc_oc=AdjObLjZPjYAOohzKaj87goLHk1M9rLXjdZ8fsGPLcRwPImkMg3xdzMQnyLz1adID2_sE5PfFl-CR0YDJNYFIV8A&_nc_ht=scontent.flim15-1.fna&oh=00_AfDD0JFnIUGdeOyf1HOylx8qJv6wQNPr-BqCpLh-uXFa6A&oe=661FA8EE)] w-full bg-cover bg-right rounded-2xl overflow-hidden pb-10">
+        <div className="col-span-1 bg-[url(/public/vrbanner_2_lg.webp)] w-full bg-cover bg-right rounded-2xl overflow-hidden pb-10">
           <div className="w-1/2 p-8">
             <h3 className="text-4xl mb-2 pt-7">
               Do more in style with Ray-Ban | Meta
