@@ -30,7 +30,7 @@ const VRCard = ({title, content}) => {
           className="py-2 flex items-center gap-2 group"
         >
           <div className="bg-white border border-gray-400 rounded-full">
-            <ChevronDown w={6}/>
+            <ChevronDown className="w-6 h-6"/>
           </div>
           <p className="text-sm font-semibold text-blue-600/80 border-b border-b-transparent group-hover:border-b-blue-600 transition-colors duration-500">
             Learn more

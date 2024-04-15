@@ -1,9 +1,10 @@
 import Bag from "../../icons/Bag"
 import ChevronDown from "../../icons/ChevronDown"
 import User from "../../icons/User"
+import BurgerMenu from '../../icons/BurgerMenu'
+import Search from '../../icons/Search'
 
 import Navbar_meta from '../../../public/navbar_meta.svg'
-import BurgerMenu from '../../icons/BurgerMenu'
 
 const NavbarLeft = () => {
   return (
@@ -54,10 +55,7 @@ const NavbarRight = () => {
       </a>
 
       <div className="w-50 cursor-pointer px-5 py-3 flex justify-center items-center gap-2 border rounded-md border-gray-300">
-        <svg viewBox="0 0 24 24" fill="currentColor" className=" w-5 h-5" role="img" aria-label="Search">
-          <path fillRule="evenodd" clipRule="evenodd" d="M16.618 18.032a9 9 0 1 1 1.414-1.414l3.675 3.675a1 1 0 0 1-1.414 1.414l-3.675-3.675zM18 11a7 7 0 1 1-14 0 7 7 0 0 1 14 0z">
-          </path>
-        </svg>
+        <Search/>
         <p className="text-sm text-gray-400">
           Seach Meta Store
         </p>

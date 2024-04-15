@@ -22,7 +22,7 @@ const Blog = () => {
     <section>
       <div className='max-w-[1380px] mx-auto w-full px-8 mb-52'>
         <div className="flex mb-6 gap-4">
-        <ChevronDown w={6}/>
+        <ChevronDown className="w-6 h-6"/>
           <h3 className='text-lg'>
             Latest news
           </h3>

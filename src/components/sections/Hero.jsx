@@ -25,7 +25,7 @@ const Hero = () => {
               className="py-2 flex items-center gap-2 group"
             >
               <div className="bg-white border border-gray-400 rounded-full">
-                <ChevronRight w={8}/>
+                <ChevronRight className="w-7 h-7"/>
               </div>
               <p className="text-sm font-semibold text-blue-600/80 border-b border-b-transparent group-hover:border-b-blue-600 transition-colors duration-500">
                 Learn more
