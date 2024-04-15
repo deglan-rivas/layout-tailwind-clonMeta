@@ -6,6 +6,125 @@ import youtube from '../../../public/footer_logo_yt.svg'
 
 import navbar_meta from '../../../public/navbar_meta.svg'
 
+const links_site_terms = {
+  title: 'Site terms and policies',
+  anchors: [
+    'Community standards',
+    'Privacy policy',
+    'Terms',
+    'Cookie policy',
+  ]
+}
+
+const links_virtual_reality = {
+  title: 'Virtual reality',
+  anchors: [
+    'Shop Meta Quest',
+    'Refurbished Meta Quest 2',
+    'Meta Warranty Plus',
+    'VR for Good',
+    'Forums',
+    'Referrals',
+    'Blog',
+    'Creators',
+    'Download SDKs',
+    'Developers',
+    'Made for Meta partner program',
+    'Safety information for parents & pre-teens',
+    'Meta Quest health & safety information',
+    'Meta Quest safety center',
+    'Meta for Work',
+    'Meta Avatars'
+  ]
+};
+
+const links_smart_glasses = {
+  title: 'Smart glasses',
+  anchors: [
+    'Shop Ray-Ban Meta smart glasses',
+    'Ray-Ban Stories',
+    'Privacy information',
+    'Supported countries'
+  ]
+};
+
+const links_support_legal = {
+  title: 'Support and legal',
+  anchors: [
+    'Meta Help Center',
+    'Order status',
+    'Returns',
+    'Find a product demo',
+    'Legal',
+    'Terms of sale'
+  ]
+};
+
+const links_our_actions = {
+  title: 'Our actions',
+  anchors: [
+    'Data and privacy',
+    'Safety and expression',
+    'Responsible business practices',
+    'Elections',
+    'COVID-19 response',
+    'Regulations'
+  ]
+};
+
+const links_about_us = {
+  title: 'About us',
+  anchors: [
+    'About Meta',
+    'Media gallery',
+    'Brand resources',
+    'For investors'
+  ]
+};
+
+const links_our_community = {
+  title: 'Our community',
+  anchors: [
+    'Support SMB',
+    'Giving together',
+    'Social impact'
+  ]
+};
+
+const links_app_support = {
+  title: 'App support',
+  anchors: [
+    'Facebook Help Center',
+    'Messenger Help Center',
+    'Instagram Help Center',
+    'WhatsApp Help Center',
+    'Workplace Help Center',
+    'Meta Verified'
+  ]
+};
+
+const Group_links = ({title, anchors}) => {
+  return (
+    <>
+      <h4 className="font-medium text-gray-600">
+        {title}
+      </h4>
+      {
+        anchors.map((anchor, index) => {
+          return (
+            <a href="#"
+              className="hover:underline"
+              key={index}
+            >
+              {anchor}
+            </a>
+          )
+        })
+      }
+    </>
+  )
+}
+
 const Footer = () => {
   return (
     <footer className='border-t border-t-gray-300'>
@@ -42,300 +161,39 @@ const Footer = () => {
         <div className="col-span-3 sm:col-span-2 grid grid-cols-3 gap-8">
           <div className="col-span-1">
             <div className='flex flex-col space-y-1 mb-8'>
-              <h4 className="font-medium text-gray-600">
-                Site terms and policies
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Community standards
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Privacy policy
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Terms
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Cookie policy
-              </a>
+              <Group_links {...links_site_terms}/>
             </div>
 
             <div className='flex flex-col space-y-1'>
-              <h4 className="font-medium text-gray-600">
-                Virtual reality
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Shop Meta Quest
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Refurbished Meta Quest 2
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta Warranty Plus
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                VR for Good
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Forums
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Referrals
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Blog
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Creators
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Download SDKs
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Developers
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Made for Meta partner program
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Safety information for parents & pre-teens
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta Quest health & safety information
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta Quest safety center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta for Work
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta Avatars
-              </a>
+              <Group_links title={links_virtual_reality.title} anchors={links_virtual_reality.anchors}/>
             </div>
           </div>
 
           <div className="col-span-1">
             <div className="space-y-1 flex flex-col mb-8">
-              <h4 className="font-medium text-gray-600">
-                Smart glasses
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Shop Ray-Ban Meta smart glasses
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Ray-Ban Stories
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Privacy information
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Supported countries
-              </a>
+              <Group_links title={links_smart_glasses.title} anchors={links_smart_glasses.anchors}/>
             </div>
 
             <div className="space-y-1 flex flex-col mb-8">
-              <h4 className="font-medium text-gray-600">
-                Support and legal
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta Help Center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Order status
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Returns
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Find a product demo
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Legal
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Terms of sale
-              </a>
+              <Group_links title={links_support_legal.title} anchors={links_support_legal.anchors}/>
             </div>
 
             <div className="space-y-1 flex flex-col">
-              <h4 className="font-medium text-gray-600">
-                Our actions
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Data and privacy
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Safety and expression
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Responsible business practices
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Elections
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                COVID-19 response
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Regulations
-              </a>
+              <Group_links title={links_our_actions.title} anchors={links_our_actions.anchors}/>
             </div>
           </div>
 
           <div className="col-span-1">
             <div className='space-y-1 flex flex-col mb-8'>
-              <h4 className="font-medium text-gray-600">
-                About us
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                About Meta
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Media gallery
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Brand resources
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                For investors
-              </a>
+              <Group_links title={links_about_us.title} anchors={links_about_us.anchors}/>
             </div>
 
             <div className="space-y-1 flex flex-col mb-8">
-              <h4 className="font-medium text-gray-600">
-                Our community
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Support SMB
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Giving together
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Social impact
-              </a>
+              <Group_links title={links_our_community.title} anchors={links_our_community.anchors}/>
             </div>
 
             <div className="space-y-1 flex flex-col">
-              <h4 className="font-medium text-gray-600">
-                App support
-              </h4>
-              <a href="#"
-                className="hover:underline"
-              >
-                Facebook Help Center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Messenger Help Center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Instagram Help Center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                WhatsApp Help Center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Workplace Help Center
-              </a>
-              <a href="#"
-                className="hover:underline"
-              >
-                Meta Verified
-              </a>
+              <Group_links title={links_app_support.title} anchors={links_app_support.anchors}/>
             </div>
           </div>
         </div>
