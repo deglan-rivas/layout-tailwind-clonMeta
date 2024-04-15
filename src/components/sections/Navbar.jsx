@@ -3,10 +3,12 @@ import ChevronDown from "../../icons/ChevronDown"
 import User from "../../icons/User"
 
 import Navbar_meta from '../../../public/navbar_meta.svg'
+import BurgerMenu from '../../icons/BurgerMenu'
 
 const NavbarLeft = () => {
   return (
     <div className="flex items-center gap-6">
+      <BurgerMenu className="w-6 h-6"/>
       <img src={Navbar_meta} alt="navbar_meta" 
         className="w-16"
       />
