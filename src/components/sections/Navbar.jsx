@@ -133,13 +133,21 @@ const DrawerUser = () => {
         </Button>
       </DrawerTrigger>
       <DrawerContent className="left-0 right-5 inset-y-0 mt-0 overflow-hidden
-      ">
-        <div className="mx-auto w-full bg-transparent border-b border-b-gray-300">
-          <div className="flex justify-between py-5">
-            <div className="basis-full flex justify-center">
+      lg:w-[670px]">
+        <div className="mx-auto w-full bg-transparent border-b border-b-gray-300
+        lg:border-b-0">
+          <div className="flex justify-between py-5
+          lg:px-12 lg:py-14">
+            <div className="basis-full flex justify-center
+            lg:justify-between">
               <img src={Navbar_meta} alt="navbar_meta" 
-                className="w-16"
+                className="w-16 
+                lg:hidden"
               />
+              <h3 className="hidden text-2xl
+              lg:block">
+                Meta account
+              </h3>
             </div>
             <DrawerClose asChild className="basis-auto">
               <Button className="bg-transparent text-black hover:bg-transparent hover:text-blue-500 p-0 px-4 h-auto">
@@ -149,8 +157,14 @@ const DrawerUser = () => {
           </div>
         </div>
 
-        <div className="border-b border-b-gray-300 px-4 py-6 space-y-4 mb-3">
-          <h3 className="text-lg">
+        <div className="border-b border-b-gray-300 px-4 py-6 space-y-4 mb-3 w-full
+        lg:w-[450px] lg:mx-auto lg:border-b-0 lg:space-y-6">
+          <img src={Navbar_meta} alt="navbar_meta" 
+            className="w-32 mx-auto hidden
+            lg:block"
+          />
+          <h3 className="text-lg
+          lg:text-2xl lg:text-center lg:py-4">
             Log into your Meta account
           </h3>
           <p className="text-gray-600">
@@ -178,12 +192,14 @@ const DrawerUser = () => {
           </a>
         </div>
 
-        <div className="px-4 py-3 text-lg flex justify-between items-center">
+        <div className="px-4 py-3 text-lg flex justify-between items-center
+        lg:hidden">
           <a href="#">About Meta</a>
           <ChevronRight className={"w-6 h-6"}/>
         </div>
 
-        <div className="px-4 py-3 text-lg flex justify-between items-center">
+        <div className="px-4 py-3 text-lg flex justify-between items-center
+        lg:hidden">
           Support
           <ChevronRight className={"w-6 h-6"}/>
         </div>
@@ -203,22 +219,22 @@ const NavbarLeft = () => {
         className="w-16 "
       />
 
-      <a href="#" className="items-center gap-1 group hidden lg:flex">
-        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4">
+      <a href="#" className="items-center gap-0 group hidden lg:flex">
+        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           Meta Quest
         </p>
         <ChevronDown className={"w-6 h-6"}/>
       </a>
 
-      <a href="#" className="items-center gap-1 group hidden lg:flex">
-        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4">
+      <a href="#" className="items-center gap-0 group hidden lg:flex">
+        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           Ray-Ban | Meta
         </p>
         <ChevronDown className={"w-6 h-6"}/>
       </a>
 
-      <a href="#" className="items-center gap-1 group hidden lg:flex">
-        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4">
+      <a href="#" className="items-center gap-0 group hidden lg:flex">
+        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           Apps and games
         </p>
         <ChevronDown className={"w-6 h-6"}/>
@@ -231,7 +247,7 @@ const NavbarRight = () => {
   return (
     <div className="flex items-center gap-6">
       <a href="#" className="group hidden lg:block">
-        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4">
+        <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           About Meta
         </p>
       </a>
