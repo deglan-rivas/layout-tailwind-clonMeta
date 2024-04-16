@@ -1,23 +1,49 @@
+import Hero_poster from '../../../public/Hero_poster.webp'
+import Hero_webm from '../../../public/Hero_video.webm'
+import Hero_mp4 from '../../../public/Hero_video.mp4'
+
 import ChevronRight from "../../icons/ChevronRight"
 
+import { useEffect, useState, useRef } from 'react';
+import Pause from '@/icons/Pause';
+import Play from '@/icons/Play';
+
 const Hero = () => {
+  const ref = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  useEffect(() => {
+    if (isPlaying) {
+      ref.current.play();
+    } else {
+      ref.current.pause();
+    }
+  })
+
   return (
-    <section className="h-[600px] bg-gray-500">
-      <div className="max-w-[1230px] mx-auto w-full px-8 pt-20">
-        <div className="max-w-lg text-white">
-          <p className="text-xs font-normal text-violet-600 rounded-md px-2 py-0.5 bg-white inline-block mb-2">
+    <section className="min-h-80 bg-white
+    lg:min-h-[540px] lg:bg-gray-500">
+      <div className="max-w-[1230px] mx-auto w-full px-4 py-9
+      lg:px-8 lg:py-20">
+        <div className="w-full
+        md:max-w-lg
+        lg:max-w-lg lg:text-white">
+          <p className="text-xs font-normal text-violet-600 rounded-md px-2 py-0.5 bg-white inline-block mb-4">
             Special offer
           </p>
-          <h3 className="text-7xl mb-8">
+          <h3 className="text-4xl mb-4 text-black font-medium max-w-md
+          md:text-5xl
+          lg:text-6xl lg:mb-8 lg:text-white">
             Expand your world with Meta Quest 3
           </h3>
-          <p className="mb-10 text-lg tracking-wide">
+          <p className="mb-6 text-lg tracking-wide text-gray-600 text-center
+          lg:text-white lg:mb-10 lg:text-left">
             Mixed reality starting at $499.99 USD
           </p>
 
           <div className="flex gap-4">
             <a href="#"
-              className="border-2 border-transparent px-7 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-full inline-flex justify-center items-center"
+              className="border-2 border-transparent px-7 py-4 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-full inline-flex justify-center items-center"
             >
               Add to bag
             </a>
@@ -34,6 +60,32 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+{/* usar un children para meter los source y media queries de calidad, luego dibujar el pause y play, y finalmente vincular controles con el .pause y .play ez https://react.dev/learn/synchronizing-with-effects
+descargar el poster
+preguntar a chatgpt si se puede usar el object cover fit con videos o solo con imagenes  y darle w:h - 2:1
+escribirlo en notion
+*/}
+      <div className="relative">
+        {/* agrega controls para mostrar los controles como dice w3schools */}
+        <video ref={ref} className="w-full object-cover object-center
+        lg:hidden" data-automation="VideoPlayer" playsInline loop={"loop"} muted autoPlay poster={Hero_poster} preload="auto" aria-label="video-player" controlsList="nodownload">
+          <source src={Hero_webm} type="video/webm"/>
+          <source src={Hero_mp4} type="video/mp4"/>
+
+        </video>
+
+        <button className="hover:brightness-150 hover:ring-inset hover:ring-1 absolute right-12 bottom-12 translate-x-1/2 translate-y-1/2 w-8 h-8 flex justify-center items-center bg-gray-500/20 text-white border border-white rounded-full
+        md:right-8 md:bottom-8"
+          onClick={() => setIsPlaying(!isPlaying)}
+        >
+          {isPlaying 
+            ? <Pause/>
+            : <Play/>
+          }
+        </button>
+      </div>
+
     </section>
   )
 }
