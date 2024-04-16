@@ -20,6 +20,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import ChevronRight from "@/icons/ChevronRight"
+import Glasses from "@/icons/Glasses"
+import Headphones from "@/icons/Headphones"
 
 const linksMetaQuest = {
   title: 'Meta Quest',
@@ -89,7 +92,7 @@ const DrawerBurgerMenu = () => {
               [
               linksMetaQuest,
               linksRayBan,
-              linksMetaQuest
+              linksAppsGames
               ].map((links, index) => {
                 return (
                   <AccordionItem key={`item-${index}`} value={`item-${index}`} className="border-b-0">
@@ -118,36 +121,74 @@ const DrawerBurgerMenu = () => {
         </div>
       </DrawerContent>
     </Drawer>
-    
-    // <Drawer direction="left">
-    //   <DrawerTrigger asChild>
-    //     <Button className="bg-white hover:bg-gray-100 p-2 group lg:hidden">
-    //       <BurgerMenu className="w-6 h-6 text-black group-hover:text-blue-500"/>
-    //     </Button>
-    //   </DrawerTrigger>
-    //   <DrawerContent className="lg:hidden left-0 right-5 inset-y-0 mt-0">
-    //     <div className="mx-auto w-full max-w-sm">
-    //       <DrawerHeader>
-    //         <DrawerTitle>Move Goal</DrawerTitle>
-    //         <DrawerDescription>Set your daily activity goal.</DrawerDescription>
-    //       </DrawerHeader>
-    //       <div className="p-4 pb-0">
-    //         <div className="flex items-center justify-center space-x-2">
-    //           <div>ga1</div>
-    //         </div>
-    //         <div className="mt-3 h-[120px]">
-    //           <div>ga2</div>
-    //         </div>
-    //       </div>
-    //       <DrawerFooter>
-    //         <Button>Submit</Button>
-    //         <DrawerClose asChild>
-    //           <Button variant="outline">Cancel</Button>
-    //         </DrawerClose>
-    //       </DrawerFooter>
-    //     </div>
-    //   </DrawerContent>
-    // </Drawer>
+  )
+}
+
+const DrawerUser = () => {
+  return (
+    <Drawer direction="left">
+      <DrawerTrigger asChild>
+        <Button className="bg-white hover:bg-gray-100 p-2 group">
+          <User className={"w-6 h-6 text-black group-hover:text-blue-500"}/>
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent className="left-0 right-5 inset-y-0 mt-0 overflow-hidden
+      ">
+        <div className="mx-auto w-full bg-transparent border-b border-b-gray-300">
+          <div className="flex justify-between py-5">
+            <div className="basis-full flex justify-center">
+              <img src={Navbar_meta} alt="navbar_meta" 
+                className="w-16"
+              />
+            </div>
+            <DrawerClose asChild className="basis-auto">
+              <Button className="bg-transparent text-black hover:bg-transparent hover:text-blue-500 p-0 px-4 h-auto">
+                <Close className={"w-6 h-6"}/>
+              </Button>
+            </DrawerClose>
+          </div>
+        </div>
+
+        <div className="border-b border-b-gray-300 px-4 py-6 space-y-4 mb-3">
+          <h3 className="text-lg">
+            Log into your Meta account
+          </h3>
+          <p className="text-gray-600">
+            With a Meta account, you can
+          </p>
+          <p className="flex items-center gap-2 text-gray-600">
+            <Bag className={"w-7 h-7"}/>
+            Manage orders and returns
+          </p>
+          <p className="flex items-center gap-2 text-gray-600">
+            <Glasses className={"w-7 h-7"}/>
+            Explore recommended products, apps & games
+          </p>
+          <p className="flex items-center gap-2 text-gray-600 pb-4">
+            <Headphones className={"w-7 h-7"}/>
+            Get personalized customer support
+          </p>
+          <button className="w-full bg-blue-600 text-white rounded-full px-4 py-4 text-center text-sm font-medium">
+            Sign up or log into Meta account
+          </button>
+          <a href="#"
+            className="text-blue-600 hover:text-blue-500 block text-center text-sm"
+          >
+            Learn more about Meta accounts
+          </a>
+        </div>
+
+        <div className="px-4 py-3 text-lg flex justify-between items-center">
+          <a href="#">About Meta</a>
+          <ChevronRight className={"w-6 h-6"}/>
+        </div>
+
+        <div className="px-4 py-3 text-lg flex justify-between items-center">
+          Support
+          <ChevronRight className={"w-6 h-6"}/>
+        </div>
+      </DrawerContent>
+    </Drawer>
   )
 }
 
@@ -211,7 +252,7 @@ const NavbarRight = () => {
 
       <Search className={"w-6 h-6 lg:hidden"}/>
       <Bag className={"w-6 h-6"}/>
-      <User className={"w-6 h-6"}/>
+      <DrawerUser/>
     </div>
   )
 }
