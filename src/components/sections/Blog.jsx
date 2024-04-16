@@ -10,7 +10,9 @@ const BlogCard = ({ image, title }) => {
       <img src={image} alt="blog_reality_headset" 
         className='w-full object-cover mb-6'
       />
-      <h4 className='text-2xl font-medium'>
+      <h4 className='text-xl 
+      md:text-2xl
+      lg:text-[28px]'>
         {title}
       </h4>
     </div>
@@ -20,7 +22,9 @@ const BlogCard = ({ image, title }) => {
 const Blog = () => {
   return (
     <section>
-      <div className='max-w-[1380px] mx-auto w-full px-8 mb-52'>
+      <div className='max-w-[1380px] mx-auto w-full px-4 mb-36
+      md:mb-44
+      lg:px-8 lg:mb52'>
         <div className="flex mb-6 gap-4">
         <ChevronDown className="w-6 h-6"/>
           <h3 className='text-lg'>
