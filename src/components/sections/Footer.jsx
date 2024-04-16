@@ -294,16 +294,18 @@ const Footer_1_links = () => {
 
 const Footer_2 = () => {
   return (
-    <div className='grid grid-cols-3'>
-      <div className='col-span-3 mb-12 
-      sm:col-span-1'>
+    <div className='grid grid-cols-6'>
+      <div className='col-span-6 mb-12 
+      sm:col-span-3
+      lg:col-span-2'>
         <a href='#' className='underline'>
           United States (English)
         </a>
       </div>
 
-      <div className='col-span-3 space-y-3 text-xs pt-3
-      sm:col-span-2'>
+      <div className='col-span-6 space-y-3 text-xs pt-3
+      sm:col-span-3
+      lg:col-span-4'>
         <p className='uppercase'>
           Meta quest
         </p>
