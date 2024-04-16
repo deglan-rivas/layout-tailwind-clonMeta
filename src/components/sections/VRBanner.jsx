@@ -27,12 +27,15 @@ const VRCard = ({title, content}) => {
       <div className="grid grid-cols-2 gap-4">
         <a href="#"
           className="px-7 py-4 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-full flex justify-center items-center
-          lg:px-6  lg:gap-3"
+          lg:px-6  lg:gap-3 lg:col-span-2
+          xl:col-span-1 xl:px-4"
         >
           Add to bag
         </a>
         <a href="#"
-          className="py-2 flex items-center gap-2 group"
+          className="py-2 flex items-center gap-2 group
+          lg:col-span-2
+          xl:col-span-1"
         >
           <div className="bg-white border border-gray-400 rounded-full">
             <ChevronDown className="w-6 h-6"/>

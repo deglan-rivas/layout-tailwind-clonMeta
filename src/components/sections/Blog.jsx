@@ -6,7 +6,7 @@ import ChevronDown from '../../icons/ChevronDown.jsx'
 
 const BlogCard = ({ image, title }) => {
   return (
-    <div className='w-1/3 min-w-72'>
+    <a href='#' className='w-1/3 min-w-72'>
       <img src={image} alt="blog_reality_headset" 
         className='w-full object-cover mb-6'
       />
@@ -15,7 +15,7 @@ const BlogCard = ({ image, title }) => {
       lg:text-[28px]'>
         {title}
       </h4>
-    </div>
+    </a>
   )
 }
 

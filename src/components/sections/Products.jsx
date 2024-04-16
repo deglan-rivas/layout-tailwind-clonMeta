@@ -5,14 +5,16 @@ import ray_ban from '../../../public/products_4.webp'
 
 const Product = ({image, title}) =>{
   return (
-    <div className="basis-[49%] flex flex-col justify-between items-center h-60
+    <div className="basis-[49%] flex flex-col justify-between items-center h-64
     md:h-80
     lg:basis-1/4 lg:h-64">
+      <a href="#" className='flex justify-center items-center w-full'>
       <img src={image} alt="products_meta_quest" 
-        className='w-4/5 mb-2
+        className='w-1/2 mb-2 max-w-64
         md:mb-2 md:w-3/5
-        lg:w-3/5'
+        lg:w-4/5'
       />
+      </a>
       <p className="text-lg mb-6 w-36 text-center font-medium
       md:mb-6">
         {title}
@@ -29,7 +31,7 @@ const Product = ({image, title}) =>{
 const Products = () => {
   return (
     <section>
-      <div className="max-w-[1500px] mx-auto w-full px-4 flex flex-col items-center mb-14
+      <div className="max-w-[1500px] mx-auto w-full px-4 flex flex-col items-center mb-24
       md:mb-24
       lg:px-8 lg:mb-32">
         <h2 className="text-3xl mb-4 font-medium
@@ -44,7 +46,7 @@ const Products = () => {
         </p>
         <div className="flex flex-wrap gap-x-1 gap-y-12
         md:gap-y-24
-        lg:gap-x-0 lg:flex-nowrap">
+        lg:gap-x-8 lg:flex-nowrap">
           <Product
             image={meta_quest}
             title="Meta Quest"

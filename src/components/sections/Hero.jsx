@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="w-full
         md:max-w-lg
         lg:max-w-lg lg:text-white">
-          <p className="text-xs font-normal text-violet-600 rounded-md px-2 py-0.5 bg-white inline-block mb-4">
+          <p className="text-xs font-normal text-violet-600 rounded-md px-2 py-0.5 bg-pink-50 inline-block mb-4">
             Special offer
           </p>
           <h3 className="text-4xl mb-4 text-black font-medium max-w-md

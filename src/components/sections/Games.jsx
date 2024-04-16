@@ -6,14 +6,14 @@ import meta_quest from '../../../public/games_5.webp'
 
 const Game  = ({image, title}) => {
   return (
-    <div className='w-1/5 min-w-72 p-4'>
+    <a href='#' className='w-1/5 min-w-72 p-4'>
       <img src={image} alt="game_roblox" 
-        className='w-ful object-cover mb-4'
+        className='w-full object-cover mb-4'
       />
       <p className='mb-6 text-2xl'>
         {title}
       </p>
-    </div>
+    </a>
   )
 }
 
