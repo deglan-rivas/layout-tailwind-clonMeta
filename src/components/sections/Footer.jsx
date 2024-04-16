@@ -134,7 +134,9 @@ const Group_links = ({title, anchors}) => {
 
 const Footer_1_network = () => {
   return (
-    <div className="col-span-3 sm:col-span-1">
+    <div className="col-span-3 
+    sm:grid sm:grid-cols-2
+    lg:col-span-1 lg:block">
       <img src={navbar_meta} alt="footer_meta" 
       className="w-24 mb-8
       sm:mb-12"
@@ -167,7 +169,9 @@ const Footer_1_network = () => {
 const Footer_1_links = () => {
   return (
     <>
-      <Accordion type="single" collapsible className="col-span-3">
+      <Accordion type="single" collapsible className="col-span-3
+      sm:hidden
+      ">
         {
           [
           links_site_terms,
@@ -204,8 +208,48 @@ const Footer_1_links = () => {
         }
       </Accordion>
 
-      <div className="col-span-3 grid-cols-3 gap-8 hidden
-      sm:grid sm:col-span-2">
+      <div className="col-span-3 grid-cols-2 gap-0 hidden
+      sm:grid
+      lg:hidden">
+        <div className="col-span-1">
+          <div className='flex flex-col space-y-1 mb-8'>
+            <Group_links {...links_site_terms}/>
+          </div>
+
+          <div className='flex flex-col space-y-1'>
+            <Group_links title={links_virtual_reality.title} anchors={links_virtual_reality.anchors}/>
+          </div>
+
+          <div className='space-y-1 flex flex-col mb-8'>
+            <Group_links title={links_about_us.title} anchors={links_about_us.anchors}/>
+          </div>
+        </div>
+
+        <div className="col-span-1">
+          <div className="space-y-1 flex flex-col mb-8">
+            <Group_links title={links_smart_glasses.title} anchors={links_smart_glasses.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col mb-8">
+            <Group_links title={links_support_legal.title} anchors={links_support_legal.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col">
+            <Group_links title={links_our_actions.title} anchors={links_our_actions.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col mb-8">
+            <Group_links title={links_our_community.title} anchors={links_our_community.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col">
+            <Group_links title={links_app_support.title} anchors={links_app_support.anchors}/>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-span-2 grid-cols-3 gap-0 hidden
+      lg:grid">
         <div className="col-span-1">
           <div className='flex flex-col space-y-1 mb-8'>
             <Group_links {...links_site_terms}/>
@@ -309,7 +353,7 @@ const Footer = () => {
   return (
     <footer className='border-t border-t-gray-300'>
       <div className="max-w-[1500px] mx-auto text-sm text-gray-600">
-        <div className="px-4 py-12 grid grid-cols-3 mb-24
+        <div className="px-4 py-12 grid grid-cols-3 mb-0
         sm:px-8">
           <Footer_1_network/>
           <Footer_1_links/>
