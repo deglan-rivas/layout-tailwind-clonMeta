@@ -6,7 +6,7 @@ import ChevronDown from '../../icons/ChevronDown.jsx'
 
 const BlogCard = ({ image, title }) => {
   return (
-    <div className='w-1/3'>
+    <div className='w-1/3 min-w-72'>
       <img src={image} alt="blog_reality_headset" 
         className='w-full object-cover mb-6'
       />
@@ -28,7 +28,7 @@ const Blog = () => {
           </h3>
         </div>
 
-        <div className="flex gap-8 justify-between overflow-hidden">
+        <div className="flex gap-8 justify-between overflow-x-auto">
           <BlogCard image={reality_headset} title="Meta Quest 3: The First Mass-Market Mixed Reality Headset"/>
           <BlogCard image={glasses_collection} title="Introducing the Next-Generation Ray-Ban | Meta Smart Glasses Collection "/>
           <BlogCard image={keynote_recap} title="Meta Connect 2023 Keynote Recap"/>

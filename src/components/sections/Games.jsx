@@ -6,7 +6,7 @@ import meta_quest from '../../../public/games_5.webp'
 
 const Game  = ({image, title}) => {
   return (
-    <div className='w-1/5 p-4'>
+    <div className='w-1/5 min-w-72 p-4'>
       <img src={image} alt="game_roblox" 
         className='w-ful object-cover mb-4'
       />
@@ -20,19 +20,21 @@ const Game  = ({image, title}) => {
 const Games = () => {
   return (
     <section>
-      <div className="max-w-[1540px] mx-auto w-full px-8 flex flex-col items-center mb-32">
-        <h3 className="text-3xl text-center mb-10 w-full
-        md:text-4xl
+      <div className="mx-auto w-full px-4 flex flex-col items-center mb-16
+      md:mb-24
+      lg:mb-32">
+        <h3 className="text-3xl text-center mb-12 w-60 font-medium
+        md:text-4xl md:w-[600px]
         lg:text-5xl lg:w-[730px]">
           Explore games and experiences on Meta Quest
         </h3>
         <a href="#"
-          className='text-xs py-3 px-7 mb-12 border-2 border-gray-300 rounded-full text-blue-500 hover:text-blue-400 font-semibold'
+          className='text-sm py-3 px-7 mb-12 border-2 border-gray-300 rounded-full text-blue-500 hover:text-blue-400 font-semibold'
         >
           Browse apps & games
         </a>
         
-        <div className='border border-gray-300 divide-x w-full flex'>
+        <div className='border border-gray-300 divide-x w-full flex overflow-x-auto'>
           <Game image={roblox} title="Roblox"/>
           <Game image={asgard} title="Asgard's Wrath 2"/>
           <Game image={peacock} title="Peacock"/>

@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-80 bg-white
-    lg:min-h-[540px] lg:bg-gray-500">
+    lg:min-h-[540px] lg:bg-gray-500 lg:bg-[url('')]">
       <div className="max-w-[1230px] mx-auto w-full px-4 py-9
       lg:px-8 lg:py-20">
         <div className="w-full
