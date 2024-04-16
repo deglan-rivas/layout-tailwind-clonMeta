@@ -49,7 +49,7 @@ const VRCard = ({title, content}) => {
 const VRBanner = () => {
   return (
     <section className="">
-      <div className=" mx-auto w-full px-4 grid grid-cols-2 gap-4 py-8 mb-7
+      <div className="max-w-[1500px] mx-auto w-full px-4 grid grid-cols-2 gap-4 py-8 mb-7
       lg:px-8 lg:gap-8 lg:mb-20">
         <div className="col-span-2 w-full bg-[url(/public/vrbanner_1_sm.webp)]  bg-cover bg-right rounded-2xl overflow-hidden pb-10
         md:bg-[url(/public/vrbanner_1_md.webp)]

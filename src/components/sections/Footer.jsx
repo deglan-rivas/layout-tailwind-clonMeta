@@ -128,7 +128,7 @@ const Group_links = ({title, anchors}) => {
 const Footer = () => {
   return (
     <footer className='border-t border-t-gray-300'>
-    <div className="max-w-[1380px] mx-auto text-sm text-gray-600">
+    <div className="max-w-[1500px] mx-auto text-sm text-gray-600">
       <div className="px-4 py-12 grid grid-cols-3 mb-24
       sm:px-8">
         <div className="col-span-3 sm:col-span-1">
@@ -158,7 +158,8 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="col-span-3 sm:col-span-2 grid grid-cols-3 gap-8">
+        <div className="col-span-3 grid-cols-3 gap-8 hidden
+        sm:grid sm:col-span-2">
           <div className="col-span-1">
             <div className='flex flex-col space-y-1 mb-8'>
               <Group_links {...links_site_terms}/>

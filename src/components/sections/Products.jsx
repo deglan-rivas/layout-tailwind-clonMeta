@@ -29,7 +29,7 @@ const Product = ({image, title}) =>{
 const Products = () => {
   return (
     <section>
-      <div className="mx-auto w-full px-4 flex flex-col items-center mb-14
+      <div className="max-w-[1500px] mx-auto w-full px-4 flex flex-col items-center mb-14
       md:mb-24
       lg:px-8 lg:mb-32">
         <h2 className="text-3xl mb-4 font-medium

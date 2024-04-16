@@ -71,7 +71,8 @@ const NavbarRight = () => {
 const Navbar = () => {
   return (
     <section className="bg-white text-sm sticky z-10 top-0 border-b border-b-gray-300">
-      <nav className="mx-auto w-full px-8 flex justify-between items-center py-5">
+      <nav className="max-w-[1500px] mx-auto w-full px-4 flex justify-between items-center py-5
+      lg:px-8">
         <NavbarLeft/>
 
         <NavbarRight/>

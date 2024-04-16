@@ -20,7 +20,7 @@ const Game  = ({image, title}) => {
 const Games = () => {
   return (
     <section>
-      <div className="mx-auto w-full px-4 flex flex-col items-center mb-16
+      <div className="max-w-[1500px] mx-auto w-full px-4 flex flex-col items-center mb-16
       md:mb-24
       lg:mb-32">
         <h3 className="text-3xl text-center mb-12 w-60 font-medium
