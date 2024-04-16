@@ -13,16 +13,21 @@ const VRCard_2 = {
 const VRCard = ({title, content}) => {
   return (
     <>
-      <h3 className="text-4xl mb-2">
+      <h3 className="text-[28px] text-center mb-2 font-medium tracking-normal
+      md:text-left md:w-[290px] md:text-[32px]
+      lg:text-4xl lg:w-[270px]">
         {title}
       </h3>
-      <p className="mb-6 text-sm">
+      <p className="mb-4 text-base text-center text-gray-600
+      md:text-left md:mb-6 md:w-[302px]
+      lg:w-[270px]">
         {content}
       </p>
       
       <div className="grid grid-cols-2 gap-4">
         <a href="#"
-          className="px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-full flex justify-center items-center"
+          className="px-7 py-4 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-full flex justify-center items-center
+          lg:px-6  lg:gap-3"
         >
           Add to bag
         </a>
@@ -43,14 +48,18 @@ const VRCard = ({title, content}) => {
 
 const VRBanner = () => {
   return (
-    <section className="bg-gray-100">
-      <div className="max-w-[1380px] mx-auto w-full px-8 grid grid-cols-2 gap-6 py-8 mb-20">
-        <div className="col-span-2 w-full bg-[url(/public/vrbanner_1_sm.webp)] md:bg-[url(/public/vrbanner_1_md.webp)] lg:bg-[url(/public/vrbanner_1_lg.webp)] bg-cover bg-right rounded-2xl overflow-hidden pb-10
-        md:col-span-1">
+    <section className="">
+      <div className="mx-auto w-full px-4 grid grid-cols-2 gap-4 py-8 mb-20
+      lg:px-8 lg:gap-8">
+        <div className="col-span-2 w-full bg-[url(/public/vrbanner_1_sm.webp)]  bg-cover bg-right rounded-2xl overflow-hidden pb-10
+        md:bg-[url(/public/vrbanner_1_md.webp)]
+        lg:bg-[url(/public/vrbanner_1_lg.webp)] lg:col-span-1">
           {/* style={{ backgroundImage: 'url(/public/vrbanner_1_lg.webp)' }} */}
-          <div className="w-1/2 p-8">
+          <div className="w-full p-8 h-[560px] flex flex-col justify-start items-center
+          md:w-1/2 md:h-auto md:items-start md:p-6]
+          ">
 
-            <p className="text-xs rounded-md px-2 py-0.5 bg-white inline-block mb-2">
+            <p className="text-xs rounded-md px-2 py-0.5 bg-white text-violet-700 inline-block mb-2">
               New low price
             </p>
             <VRCard {...VRCard_1}/>
@@ -58,8 +67,10 @@ const VRBanner = () => {
         </div>
 
         <div className="col-span-2 bg-[url(/public/vrbanner_2_lg.webp)] w-full bg-cover bg-right rounded-2xl overflow-hidden pb-10
-        md:col-span-1">
-          <div className="w-1/2 p-8">
+        md:bg-[url(/public/vrbanner_2_md.webp)]
+        lg:bg-[url(/public/vrbanner_2_lg.webp)] lg:col-span-1">
+          <div className="w-full p-8
+          md:w-1/2">
             <VRCard {...VRCard_2}/>
           </div>
         </div>
