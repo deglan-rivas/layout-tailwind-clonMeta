@@ -6,6 +6,13 @@ import youtube from '../../../public/footer_logo_yt.svg'
 
 import navbar_meta from '../../../public/navbar_meta.svg'
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 const links_site_terms = {
   title: 'Site terms and policies',
   anchors: [
@@ -159,46 +166,85 @@ const Footer_1_network = () => {
 
 const Footer_1_links = () => {
   return (
-    <div className="col-span-3 grid-cols-3 gap-8 hidden
-    sm:grid sm:col-span-2">
-      <div className="col-span-1">
-        <div className='flex flex-col space-y-1 mb-8'>
-          <Group_links {...links_site_terms}/>
+    <>
+      <Accordion type="single" collapsible className="col-span-3">
+        {
+          [
+          links_site_terms,
+          links_virtual_reality,
+          links_smart_glasses,
+          links_support_legal,
+          links_our_actions,
+          links_about_us,
+          links_our_community,
+          links_app_support
+          ].map((links, index) => {
+            return (
+              <AccordionItem key={`item-${index}`} value={`item-${index}`}>
+                <AccordionTrigger className="hover:no-underline text-base font-normal">
+                  {links.title}
+                </AccordionTrigger>
+                <AccordionContent className="text-base font-medium py-4 space-y-4">
+                  {
+                    links.anchors.map((anchor, index) => {
+                      return (
+                        <a href="#"
+                          className="block"
+                          key={index}
+                          >
+                          {anchor}
+                        </a>
+                      )
+                    })
+                  }
+                </AccordionContent>
+              </AccordionItem>
+            )
+          })
+        }
+      </Accordion>
+
+      <div className="col-span-3 grid-cols-3 gap-8 hidden
+      sm:grid sm:col-span-2">
+        <div className="col-span-1">
+          <div className='flex flex-col space-y-1 mb-8'>
+            <Group_links {...links_site_terms}/>
+          </div>
+
+          <div className='flex flex-col space-y-1'>
+            <Group_links title={links_virtual_reality.title} anchors={links_virtual_reality.anchors}/>
+          </div>
         </div>
 
-        <div className='flex flex-col space-y-1'>
-          <Group_links title={links_virtual_reality.title} anchors={links_virtual_reality.anchors}/>
+        <div className="col-span-1">
+          <div className="space-y-1 flex flex-col mb-8">
+            <Group_links title={links_smart_glasses.title} anchors={links_smart_glasses.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col mb-8">
+            <Group_links title={links_support_legal.title} anchors={links_support_legal.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col">
+            <Group_links title={links_our_actions.title} anchors={links_our_actions.anchors}/>
+          </div>
+        </div>
+
+        <div className="col-span-1">
+          <div className='space-y-1 flex flex-col mb-8'>
+            <Group_links title={links_about_us.title} anchors={links_about_us.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col mb-8">
+            <Group_links title={links_our_community.title} anchors={links_our_community.anchors}/>
+          </div>
+
+          <div className="space-y-1 flex flex-col">
+            <Group_links title={links_app_support.title} anchors={links_app_support.anchors}/>
+          </div>
         </div>
       </div>
-
-      <div className="col-span-1">
-        <div className="space-y-1 flex flex-col mb-8">
-          <Group_links title={links_smart_glasses.title} anchors={links_smart_glasses.anchors}/>
-        </div>
-
-        <div className="space-y-1 flex flex-col mb-8">
-          <Group_links title={links_support_legal.title} anchors={links_support_legal.anchors}/>
-        </div>
-
-        <div className="space-y-1 flex flex-col">
-          <Group_links title={links_our_actions.title} anchors={links_our_actions.anchors}/>
-        </div>
-      </div>
-
-      <div className="col-span-1">
-        <div className='space-y-1 flex flex-col mb-8'>
-          <Group_links title={links_about_us.title} anchors={links_about_us.anchors}/>
-        </div>
-
-        <div className="space-y-1 flex flex-col mb-8">
-          <Group_links title={links_our_community.title} anchors={links_our_community.anchors}/>
-        </div>
-
-        <div className="space-y-1 flex flex-col">
-          <Group_links title={links_app_support.title} anchors={links_app_support.anchors}/>
-        </div>
-      </div>
-    </div>
+    </>
   )
 }
 
