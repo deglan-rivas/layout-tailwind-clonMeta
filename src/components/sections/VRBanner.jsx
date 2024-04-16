@@ -49,8 +49,8 @@ const VRCard = ({title, content}) => {
 const VRBanner = () => {
   return (
     <section className="">
-      <div className="mx-auto w-full px-4 grid grid-cols-2 gap-4 py-8 mb-20
-      lg:px-8 lg:gap-8">
+      <div className="mx-auto w-full px-4 grid grid-cols-2 gap-4 py-8 mb-7
+      lg:px-8 lg:gap-8 lg:mb-20">
         <div className="col-span-2 w-full bg-[url(/public/vrbanner_1_sm.webp)]  bg-cover bg-right rounded-2xl overflow-hidden pb-10
         md:bg-[url(/public/vrbanner_1_md.webp)]
         lg:bg-[url(/public/vrbanner_1_lg.webp)] lg:col-span-1">
@@ -58,7 +58,6 @@ const VRBanner = () => {
           <div className="w-full p-8 h-[560px] flex flex-col justify-start items-center
           md:w-1/2 md:h-auto md:items-start md:p-6]
           ">
-
             <p className="text-xs rounded-md px-2 py-0.5 bg-white text-violet-700 inline-block mb-2">
               New low price
             </p>
@@ -66,11 +65,12 @@ const VRBanner = () => {
           </div>
         </div>
 
-        <div className="col-span-2 bg-[url(/public/vrbanner_2_lg.webp)] w-full bg-cover bg-right rounded-2xl overflow-hidden pb-10
+        <div className="col-span-2 bg-[url(/public/vrbanner_2_sm.webp)] w-full bg-cover bg-right rounded-2xl overflow-hidden pb-10
         md:bg-[url(/public/vrbanner_2_md.webp)]
         lg:bg-[url(/public/vrbanner_2_lg.webp)] lg:col-span-1">
-          <div className="w-full p-8
-          md:w-1/2">
+          <div className="w-full p-8 h-[560px] flex flex-col justify-start items-center
+          md:w-1/2 md:h-auto md:items-start md:p-6]
+          ">
             <VRCard {...VRCard_2}/>
           </div>
         </div>

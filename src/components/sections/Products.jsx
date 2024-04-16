@@ -5,18 +5,20 @@ import ray_ban from '../../../public/products_4.webp'
 
 const Product = ({image, title}) =>{
   return (
-    <div className="basis-1/2 flex flex-col justify-between items-center h-60 
-    sm:basis-1/4 sm:h-80">
+    <div className="basis-[49%] flex flex-col justify-between items-center h-60
+    md:h-80
+    lg:basis-1/4 lg:h-64">
       <img src={image} alt="products_meta_quest" 
-        className='w-48 mb-2
-        sm:w-64 sm:mb-2'
+        className='w-4/5 mb-2
+        md:mb-2 md:w-3/5
+        lg:w-3/5'
       />
       <p className="text-lg mb-6 w-36 text-center font-medium
-      sm:mb-6">
+      md:mb-6">
         {title}
       </p>
       <a href="#"
-        className='text-xs py-3 px-7 border-2 border-gray-300 rounded-full text-blue-500 hover:text-blue-400 font-semibold'
+        className='text-sm py-3 px-7 border-2 border-gray-300 rounded-full text-blue-500 hover:text-blue-400 font-semibold'
       >
         Shop now
       </a>
@@ -27,18 +29,22 @@ const Product = ({image, title}) =>{
 const Products = () => {
   return (
     <section>
-      <div className="max-w-[1380px] mx-auto w-full px-8 flex flex-col items-center mb-14
-      sm:mb-32">
-        <h2 className="text-4xl mb-4
-        sm:text-5xl">
+      <div className="max-w-[1380px] mx-auto w-full px-4 flex flex-col items-center mb-14
+      md:mb-24
+      lg:px-8 lg:mb-32">
+        <h2 className="text-3xl mb-4 font-medium
+        md:text-4xl
+        lg:text-5xl">
           Shop Meta products
         </h2>
-        <p className="w-3/4 text-center mb-12 text-gray-600
-        sm:w-full">
+        <p className="w-3/4 text-center mb-8 text-gray-600
+        md:w-full md:mb-12
+        lg:mb-20">
           The future of virtual reality, mixed reality and smart glasses is here.
         </p>
-        <div className="flex flex-wrap
-        sm:flex-nowrap">
+        <div className="flex flex-wrap gap-x-1 gap-y-12
+        md:gap-y-24
+        lg:gap-x-0 lg:flex-nowrap">
           <Product
             image={meta_quest}
             title="Meta Quest"

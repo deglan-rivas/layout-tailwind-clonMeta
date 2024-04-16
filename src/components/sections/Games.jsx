@@ -21,7 +21,9 @@ const Games = () => {
   return (
     <section>
       <div className="max-w-[1540px] mx-auto w-full px-8 flex flex-col items-center mb-32">
-        <h3 className="text-5xl text-center mb-10 w-[730px]">
+        <h3 className="text-3xl text-center mb-10 w-full
+        md:text-4xl
+        lg:text-5xl lg:w-[730px]">
           Explore games and experiences on Meta Quest
         </h3>
         <a href="#"
