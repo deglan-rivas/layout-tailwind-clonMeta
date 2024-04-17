@@ -6,6 +6,10 @@ import Search from '../../icons/Search'
 import Close from "@/icons/Close"
 
 import Navbar_meta from '../../../public/navbar_meta.svg'
+import Bag_1 from '../../../public/bag_1.webp'
+import Bag_3 from '../../../public/bag_3.webp'
+import Bag_4 from '../../../public/bag_4.webp'
+import Bag_5 from '../../../public/bag_5.webp'
 
 import { Button } from "@/components/ui/button"
 import {
@@ -208,6 +212,111 @@ const DrawerUser = () => {
   )
 }
 
+const BagCard = ({children, image, addedInfo, isShown}) => {
+  return (
+    <div className="min-w-44 p-2 border-x border-gray-300">
+      <p className={`text-xs py-1 px-2 rounded-md inline-block text-violet-600 bg-pink-100 mb-0 ${isShown ? 'visible' : 'invisible'}`}>
+        {isShown ? addedInfo : "no added info"}
+      </p>
+      <div className="h-72 flex flex-col justify-between
+      md:h-80">
+        <img src={image} alt="bag_image"  className="w-4/5 mx-auto
+        md:w-full"/>
+        <div className="text-sm mb-6">
+          {children}
+        </div>
+        <button className="font-medium px-4 py-3 mx-2 text-sm text-white bg-blue-600 hover:bg-blue-500 rounded-full">
+          Add to bag
+        </button>
+      </div>
+    </div>
+  )
+}
+
+const DrawerBag = () => {
+  return (
+    <Drawer direction="right">
+      <DrawerTrigger asChild>
+        <Button className="bg-white hover:bg-gray-100 p-2 group">
+          <Bag className={"w-6 h-6 text-black group-hover:text-blue-500"}/>
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent className="left-5 inset-y-0 mt-0 overflow-hidden
+      md:left-40
+      lg:w-[670px] lg:left-auto">
+        <div className="px-4
+        md:px-8">
+          <div className="flex justify-between pt-5 pb-3
+          md:pt-10
+          lg:px-12 lg:py-14">
+            <div className="basis-full">
+              <p className="text-xl text-gray-600
+              md:text-2xl">
+                Your bag is empty
+              </p>
+            </div>
+            <DrawerClose asChild className="basis-auto">
+              <Button className="bg-transparent text-black hover:bg-transparent hover:text-blue-500 p-0 px-4 h-auto">
+                <Close className={"w-6 h-6"}/>
+              </Button>
+            </DrawerClose>
+          </div>
+
+          <p className="text-sm text-gray-600 mb-6
+          md:mb-8
+          lg:mb-10">
+            Country/region: 
+            <a href="#"
+              className="text-blue-600 underline pl-2"
+            >
+              United States
+            </a>
+          </p>
+
+          <p className="text-xl mb-4
+          md:mb-6 md:text-2xl
+          lg:mb-8">
+            People also bought
+          </p>
+
+          <div className="border-y border-gray-300 rounded-md flex overflow-x-scroll gap-2">
+            <BagCard isShown={true} addedInfo={"Recommended"} image={Bag_1}>
+              <p>Meta Quest 3 512GB</p>
+              <p className="font-medium">$649.99</p>
+            </BagCard>
+
+            <BagCard isShown={false} addedInfo={""} image={Bag_1}>
+              <p>Meta Quest 3 128GB</p>
+              <p className="font-medium">$649.99</p>
+            </BagCard>
+
+            <BagCard isShown={true} addedInfo={"New low price"} image={Bag_3}>
+              <p>Meta Quest 2 128GB</p>
+              <p className="font-medium">$199.99</p>
+              <p className="line-through text-gray-500">$249.99</p>
+            </BagCard>
+
+            <BagCard isShown={false} addedInfo={""} image={Bag_4}>
+              <p>Ray-Ban Meta Wayfarer, Shiny Black / G15 Green, Standard</p>
+              <p className="font-medium">$299.99</p>
+            </BagCard>
+
+            <BagCard isShown={false} addedInfo={""} image={Bag_5}>
+              <p>Meta Quest Pro</p>
+              <p className="font-medium">$999.99</p>
+            </BagCard>
+
+            <BagCard isShown={false} addedInfo={""} image={Bag_4}>
+              <p>Ray-Ban Meta Headliner, Shiny Black / G15 Green Polarized, Standard</p>
+              <p className="font-medium">$329.99</p>
+            </BagCard>
+          </div>
+        </div>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+
 
 const NavbarLeft = () => {
   return (
@@ -267,7 +376,7 @@ const NavbarRight = () => {
       </div>
 
       <Search className={"w-6 h-6 lg:hidden"}/>
-      <Bag className={"w-6 h-6"}/>
+      <DrawerBag/>
       <DrawerUser/>
     </div>
   )
