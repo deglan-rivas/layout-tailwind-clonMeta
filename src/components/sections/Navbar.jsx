@@ -248,7 +248,7 @@ const DrawerBag = () => {
         md:px-8">
           <div className="flex justify-between pt-5 pb-3
           md:pt-10
-          lg:px-12 lg:py-14">
+          lg:py-12">
             <div className="basis-full">
               <p className="text-xl text-gray-600
               md:text-2xl">
