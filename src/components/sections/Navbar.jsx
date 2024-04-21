@@ -27,6 +27,7 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuLabel,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -71,6 +72,38 @@ const linksAppsGames = {
     'Productivity',
     'Mixed reality',
     'Meta Quest+',
+  ]
+}
+
+const linksSupportStore = {
+  title: 'Store and Device Help Centers',
+  anchors: [
+    'Find order',
+    'Meta Quest and Quest Pro',
+    'Meta Portal',
+    'Smart Glasses'
+  ]
+}
+
+const linksSupportMeta = {
+  title: 'Meta Help Center',
+  anchors: [
+    'Account Center',
+    'Meta Pay',
+    'Policies',
+    'Connected Experiences',
+  ]
+}
+
+const linksSupportApp = {
+  title: 'App Help Centers',
+  anchors: [
+    'Meta Horizon',
+    'Facebook',
+    'Messenger',
+    'Instagram',
+    'Whatsapp',
+    'Workplace'
   ]
 }
 
@@ -425,7 +458,7 @@ const DropdownMetaQuest = () => {
             <div className="ml-28 mr-auto w-[500px] grid grid-cols-2">
               {
                 linksMetaQuest.anchors.map((link, index) => (
-                  <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
+                  <DropdownMenuItem key={index} className="bg-white text-gray-700 rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
                     {link}
                   </DropdownMenuItem>
                 ))
@@ -455,7 +488,7 @@ const DropdownRayBan = () => {
             <div className="ml-28 mr-auto w-[500px] grid grid-cols-1">
               {
                 linksRayBan.anchors.map((link, index) => (
-                  <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
+                  <DropdownMenuItem key={index} className="bg-white text-gray-700 rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
                     {link}
                   </DropdownMenuItem>
                 ))
@@ -485,10 +518,77 @@ const DropdownAppsGames = () => {
             <div className="ml-28 mr-auto w-[500px] grid grid-cols-2">
               {
                 linksAppsGames.anchors.map((link, index) => (
-                  <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
+                  <DropdownMenuItem key={index} className="bg-white text-gray-700 rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
                     {link}
                   </DropdownMenuItem>
                 ))
+              }
+            </div>
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
+  )
+}
+
+const DropdownSupport = () => {
+  return (
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="group">
+          <a href="#" className="items-center gap-0 hidden lg:flex">
+            <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap group-data-[state=open]:underline group-data-[state=open]:decoration-blue-500  group-data-[state=open]:underline-offset-4">
+              Support
+            </p>
+            <ChevronDown className={"w-6 h-6 group-data-[state=open]:-rotate-180 group-hover:rotate-0"}/>
+          </a>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-screen translate-y-6 bg-black/70 h-screen p-0 border-0 border-t border-gray-300 rounded-none">
+          <div className="py-16 bg-white">
+            <div className="mr-28 ml-auto w-[750px] grid grid-cols-3">
+              { 
+                <div>
+                  <DropdownMenuLabel className="text-base text-gray-600/85">
+                    {linksSupportStore.title}
+                  </DropdownMenuLabel>
+                  {
+                    linksSupportStore.anchors.map((link, index) => (
+                      <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline text-gray-700">
+                        {link}
+                      </DropdownMenuItem>
+                    ))
+                  }
+                </div>
+              }
+
+              { 
+                <div>
+                  <DropdownMenuLabel className="text-base text-gray-600/85">
+                    {linksSupportMeta.title}
+                  </DropdownMenuLabel>
+                  {
+                    linksSupportMeta.anchors.map((link, index) => (
+                      <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline text-gray-700">
+                        {link}
+                      </DropdownMenuItem>
+                    ))
+                  }
+                </div>
+              }
+
+              { 
+                <div>
+                  <DropdownMenuLabel className="text-base text-gray-600/85">
+                    {linksSupportApp.title}
+                  </DropdownMenuLabel>
+                  {
+                    linksSupportApp.anchors.map((link, index) => (
+                      <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline text-gray-700">
+                        {link}
+                      </DropdownMenuItem>
+                    ))
+                  }
+                </div>
               }
             </div>
           </div>
@@ -544,12 +644,13 @@ const NavbarRight = () => {
         </p>
       </a>
 
-      <a href="#" className="items-center gap-1 group hidden lg:flex">
+      {/* <a href="#" className="items-center gap-1 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4">
           Support
         </p>
         <ChevronDown className={"w-6 h-6"}/>
-      </a>
+      </a> */}
+      <DropdownSupport/>
 
       <div className="w-50 cursor-pointer px-5 py-3 justify-center items-center gap-2 border rounded-md border-gray-300 hidden lg:flex">
         <Search className={"w-6 h-6"}/>
