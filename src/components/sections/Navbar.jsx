@@ -516,13 +516,13 @@ const NavbarLeft = () => {
       </a> */}
       <DropdownMetaQuest/>
 
-      <a href="#" className="items-center gap-0 group hidden lg:flex">
+      {/* <a href="#" className="items-center gap-0 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           Ray-Ban | Meta
         </p>
         <ChevronDown className={"w-6 h-6"}/>
-      </a>
-      {/* <DropdownRayBan/> */}
+      </a> */}
+      <DropdownRayBan/>
 
       <a href="#" className="items-center gap-0 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
