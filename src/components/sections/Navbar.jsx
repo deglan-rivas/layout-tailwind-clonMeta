@@ -524,13 +524,13 @@ const NavbarLeft = () => {
       </a> */}
       <DropdownRayBan/>
 
-      <a href="#" className="items-center gap-0 group hidden lg:flex">
+      {/* <a href="#" className="items-center gap-0 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           Apps and games
         </p>
         <ChevronDown className={"w-6 h-6"}/>
-      </a>
-      {/* <DropdownAppsGames/> */}
+      </a> */}
+      <DropdownAppsGames/>
     </div>
   )
 }
