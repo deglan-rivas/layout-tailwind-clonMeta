@@ -11,7 +11,10 @@ import VRbanner from "./components/sections/VRBanner"
 function App() {
   return (
     <>
+    {/* [&>div]:text-red-500 */}
+    {/* <div className="font-sans [&>div]:text-emerald-500"> */}
     <div className="font-sans">
+      {/* <div>ga2</div> */}
       <Topbar/>
       <Navbar/>
       <Hero/>

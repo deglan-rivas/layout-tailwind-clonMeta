@@ -38,7 +38,7 @@ const VRCard = ({title, content}) => {
           xl:col-span-1"
         >
           <div className="bg-white border border-gray-400 rounded-full">
-            <ChevronDown className="w-6 h-6"/>
+            <ChevronDown className="w-6 h-6 group-hover:-rotate-90"/>
           </div>
           <p className="text-sm font-semibold text-blue-600/80 border-b border-b-transparent group-hover:border-b-blue-600 transition-colors duration-500">
             Learn more

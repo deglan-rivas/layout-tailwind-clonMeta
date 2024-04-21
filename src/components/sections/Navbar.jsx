@@ -24,6 +24,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+
 import ChevronRight from "@/icons/ChevronRight"
 import Glasses from "@/icons/Glasses"
 import Headphones from "@/icons/Headphones"
@@ -317,6 +325,178 @@ const DrawerBag = () => {
   )
 }
 
+// const DrawerMetaQuest = () => {
+//   return (
+//     <Drawer direction="top">
+//       <DrawerTrigger asChild>
+//         <Button className="bg-white hover:bg-gray-100 p-2 group data-[state=open]:bg-gray-200 [&>svg]:data-[state=open]:text-blue-400">
+//           <Bag className={"w-6 h-6 text-black group-hover:text-blue-500"}/>
+//         </Button>
+//       </DrawerTrigger>
+//       <DrawerContent className="inset-x-0 h-auto top-[90px] bottom-20 mt-0 after:content-none rounded-md
+//       " overlayClass={"inset-x-0 top-40 bottom-10"}>
+//         <div className="px-4
+//         md:px-8">
+//           <div className="flex justify-between pt-5 pb-3
+//           md:pt-10
+//           lg:py-12">
+//             <div className="basis-full">
+//               <p className="text-xl text-gray-600
+//               md:text-2xl">
+//                 Your bag is empty
+//               </p>
+//             </div>
+//             <DrawerClose asChild className="basis-auto">
+//               <Button className="bg-transparent text-black hover:bg-transparent hover:text-blue-500 p-0 px-4 h-auto">
+//                 <Close className={"w-6 h-6"}/>
+//               </Button>
+//             </DrawerClose>
+//           </div>
+
+//           <p className="text-sm text-gray-600 mb-6
+//           md:mb-8
+//           lg:mb-10">
+//             Country/region: 
+//             <a href="#"
+//               className="text-blue-600 underline pl-2"
+//             >
+//               United States
+//             </a>
+//           </p>
+
+//           <p className="text-xl mb-4
+//           md:mb-6 md:text-2xl
+//           lg:mb-8">
+//             People also bought
+//           </p>
+
+//           <div className="border-y border-gray-300 rounded-md flex overflow-x-scroll gap-2">
+//             <BagCard isShown={true} addedInfo={"Recommended"} image={Bag_1}>
+//               <p>Meta Quest 3 512GB</p>
+//               <p className="font-medium">$649.99</p>
+//             </BagCard>
+
+//             <BagCard isShown={false} addedInfo={""} image={Bag_1}>
+//               <p>Meta Quest 3 128GB</p>
+//               <p className="font-medium">$649.99</p>
+//             </BagCard>
+
+//             <BagCard isShown={true} addedInfo={"New low price"} image={Bag_3}>
+//               <p>Meta Quest 2 128GB</p>
+//               <p className="font-medium">$199.99</p>
+//               <p className="line-through text-gray-500">$249.99</p>
+//             </BagCard>
+
+//             <BagCard isShown={false} addedInfo={""} image={Bag_4}>
+//               <p>Ray-Ban Meta Wayfarer, Shiny Black / G15 Green, Standard</p>
+//               <p className="font-medium">$299.99</p>
+//             </BagCard>
+
+//             <BagCard isShown={false} addedInfo={""} image={Bag_5}>
+//               <p>Meta Quest Pro</p>
+//               <p className="font-medium">$999.99</p>
+//             </BagCard>
+
+//             <BagCard isShown={false} addedInfo={""} image={Bag_4}>
+//               <p>Ray-Ban Meta Headliner, Shiny Black / G15 Green Polarized, Standard</p>
+//               <p className="font-medium">$329.99</p>
+//             </BagCard>
+//           </div>
+//         </div>
+//       </DrawerContent>
+//     </Drawer> 
+//   )
+// }
+
+const DropdownMetaQuest = () => {
+  return (
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="group">
+          <a href="#" className="items-center gap-0 hidden lg:flex">
+            <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap group-data-[state=open]:underline group-data-[state=open]:decoration-blue-500  group-data-[state=open]:underline-offset-4">
+              {linksMetaQuest.title}
+            </p>
+            <ChevronDown className={"w-6 h-6 group-data-[state=open]:-rotate-180 group-hover:rotate-0"}/>
+          </a>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-screen translate-y-6 bg-black/70 h-screen p-0 border-0 border-t border-gray-300 rounded-none">
+          <div className="py-16 bg-white">
+            <div className="ml-28 mr-auto w-[500px] grid grid-cols-2">
+              {
+                linksMetaQuest.anchors.map((link, index) => (
+                  <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
+                    {link}
+                  </DropdownMenuItem>
+                ))
+              }
+            </div>
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
+  )
+}
+
+const DropdownRayBan = () => {
+  return (
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="group">
+          <a href="#" className="items-center gap-0 hidden lg:flex">
+            <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap group-data-[state=open]:underline group-data-[state=open]:decoration-blue-500  group-data-[state=open]:underline-offset-4">
+              {linksRayBan.title}
+            </p>
+            <ChevronDown className={"w-6 h-6 group-data-[state=open]:-rotate-180 group-hover:rotate-0"}/>
+          </a>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-screen translate-y-6 bg-black/70 h-screen p-0 border-0 border-t border-gray-300 rounded-none">
+          <div className="py-16 bg-white">
+            <div className="ml-28 mr-auto w-[500px] grid grid-cols-1">
+              {
+                linksRayBan.anchors.map((link, index) => (
+                  <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
+                    {link}
+                  </DropdownMenuItem>
+                ))
+              }
+            </div>
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
+  )
+}
+
+const DropdownAppsGames = () => {
+  return (
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="group">
+          <a href="#" className="items-center gap-0 hidden lg:flex">
+            <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap group-data-[state=open]:underline group-data-[state=open]:decoration-blue-500  group-data-[state=open]:underline-offset-4">
+              {linksAppsGames.title}
+            </p>
+            <ChevronDown className={"w-6 h-6 group-data-[state=open]:-rotate-180 group-hover:rotate-0"}/>
+          </a>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-screen translate-y-6 bg-black/70 h-screen p-0 border-0 border-t border-gray-300 rounded-none">
+          <div className="py-16 bg-white">
+            <div className="ml-28 mr-auto w-[500px] grid grid-cols-2">
+              {
+                linksAppsGames.anchors.map((link, index) => (
+                  <DropdownMenuItem key={index} className="bg-white rounded-none text-xl mb-2 underline-offset-4 focus:bg-transparent hover:underline">
+                    {link}
+                  </DropdownMenuItem>
+                ))
+              }
+            </div>
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
+  )
+}
 
 const NavbarLeft = () => {
   return (
@@ -328,12 +508,13 @@ const NavbarLeft = () => {
         className="w-16 "
       />
 
-      <a href="#" className="items-center gap-0 group hidden lg:flex">
+      {/* <a href="#" className="items-center gap-0 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
           Meta Quest
         </p>
         <ChevronDown className={"w-6 h-6"}/>
-      </a>
+      </a> */}
+      <DropdownMetaQuest/>
 
       <a href="#" className="items-center gap-0 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
@@ -341,6 +522,7 @@ const NavbarLeft = () => {
         </p>
         <ChevronDown className={"w-6 h-6"}/>
       </a>
+      {/* <DropdownRayBan/> */}
 
       <a href="#" className="items-center gap-0 group hidden lg:flex">
         <p className="group-hover:underline group-hover:decoration-blue-500  group-hover:underline-offset-4 text-nowrap">
@@ -348,6 +530,7 @@ const NavbarLeft = () => {
         </p>
         <ChevronDown className={"w-6 h-6"}/>
       </a>
+      {/* <DropdownAppsGames/> */}
     </div>
   )
 }
