@@ -10,7 +10,7 @@
 
 - Due to its practicality, **Vite** was chosen to initialize, minify, and create the production *bundle*.
 - **React**, **TailwindCSS** and **Shadcn/ui** were used to quickly layout complex components.
-- The project is deployed on [**Netlify**](https://soft-manatee-e9a4f6.netlify.app/). Additionally, the final code is dockerized for local testing.
+- The project is deployed on [**Netlify**](https://timely-kitsune-3e5dcb.netlify.app/). Additionally, the final code is dockerized for local testing.
 
 ## 🚀 Getting Started
 
